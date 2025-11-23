@@ -20,6 +20,26 @@ A serial adapter is needed for programming the board for the first time. Once co
 ![Pinout](resources/Sprinkler%20pinout_bck.png)
 
 ---
+
+## Home Assistant
+
+In your Home Assistant dashboard, you can configure the duration of each valve or enable/disable it.
+
+<br>
+
+![zone_config](resources/Zone%20_Config_2.gif)
+
+<br>
+
+You can also program the entire irrigation system, setting the start time and days of the week.
+
+<br>
+
+![start_time](resources/start_time.gif)
+
+![day_schedule](resources/Week_schedule.gif)
+<br>
+
 ---
 
 ## 🧩 Specifications
