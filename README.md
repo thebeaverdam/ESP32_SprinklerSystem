@@ -40,6 +40,12 @@ You can also program the entire irrigation system, setting the start time and da
 ![day_schedule](resources/Week_schedule.gif)
 <br>
 
+Or you can have a manual control for each valve. In this case, only one can be chosen at a time, to avoid water pressure losses
+
+<br>
+
+![day_schedule](resources/manual_irrigation.gif)
+<br>
 ---
 
 ## 🧩 Specifications

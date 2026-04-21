@@ -2,27 +2,48 @@ substitutions:
   id_prefix: sprl
 
 esphome:
-  name: sprl-chip_id
-  friendly_name: sprl chip_id
+  name: sprinkler
+  friendly_name: Sprinkler System
+  name_add_mac_suffix: true
+  project:
+    name: "thebeaverdam.sprinkler"
+    version: "1.0"
 
 esp32:
   board: esp32dev
 
+  framework:
+    type: esp-idf  
+
 logger:
 
+mdns:
+
+# Enable Home Assistant API with auto-generated encryption key
 api:
 
+# Enable Over-The-Air updates
 ota:
+  - platform: esphome
 
+# WiFi configuration with fallback hotspot
 wifi:
-  ssid: !secret wifi_ssid
-  password: !secret wifi_password
-
+  # Enable fallback hotspot (captive portal) if WiFi connection fails
   ap:
-    ssid: "Riego Hotspot ${chip_id}"
-    password: "12345678"
+    ssid: "Sprinkler Setup"
 
+
+# Enable captive portal for easy WiFi setup
 captive_portal:
+
+# Enable improv via serial for WiFi provisioning
+improv_serial:
+
+# Enable ESPHome dashboard adoption
+dashboard_import:
+  package_import_url: github://thebeaverdam/ESP32_SprinklerSystem/firmware/sprinkler.yaml
+  
+
 
 web_server:
 
@@ -31,8 +52,8 @@ sprinkler:
     main_switch: "Sprinklers"
     auto_advance_switch: "Sprinklers Auto Advance"
     valves:
-      - valve_switch: "Zona 1"
-        enable_switch: "Enable Zona 1"
+      - valve_switch: "Zone 1"
+        enable_switch: "Enable Zone 1"
         run_duration_number:
           id: zone_1_run_duration
           name: "Zone 1 Run Duration"
@@ -41,8 +62,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw1
 
-      - valve_switch: "Zona 2"
-        enable_switch: "Enable Zona 2"
+      - valve_switch: "Zone 2"
+        enable_switch: "Enable Zone 2"
         run_duration_number:
           id: zone_2_run_duration
           name: "Zone 2 Run Duration"
@@ -51,8 +72,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw2
 
-      - valve_switch: "Zona 3"
-        enable_switch: "Enable Zona 3"
+      - valve_switch: "Zone 3"
+        enable_switch: "Enable Zone 3"
         run_duration_number:
           id: zone_3_run_duration
           name: "Zone 3 Run Duration"
@@ -61,8 +82,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw3
 
-      - valve_switch: "Zona 4"
-        enable_switch: "Enable Zona 4"
+      - valve_switch: "Zone 4"
+        enable_switch: "Enable Zone 4"
         run_duration_number:
           id: zone_4_run_duration
           name: "Zone 4 Run Duration"
@@ -71,8 +92,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw4
 
-      - valve_switch: "Zona 5"
-        enable_switch: "Enable Zona 5"
+      - valve_switch: "Zone 5"
+        enable_switch: "Enable Zone 5"
         run_duration_number:
           id: zone_5_run_duration
           name: "Zone 5 Run Duration"
@@ -81,8 +102,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw5
 
-      - valve_switch: "Zona 6"
-        enable_switch: "Enable Zona 6"
+      - valve_switch: "Zone 6"
+        enable_switch: "Enable Zone 6"
         run_duration_number:
           id: zone_6_run_duration
           name: "Zone 6 Run Duration"
@@ -91,8 +112,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw6
 
-      - valve_switch: "Zona 7"
-        enable_switch: "Enable Zona 7"
+      - valve_switch: "Zone 7"
+        enable_switch: "Enable Zone 7"
         run_duration_number:
           id: zone_7_run_duration
           name: "Zone 7 Run Duration"
@@ -101,8 +122,8 @@ sprinkler:
           unit_of_measurement: min
         valve_switch_id: lawn_sprinkler_valve_sw7
 
-      - valve_switch: "Zona 8"
-        enable_switch: "Enable Zona 8"
+      - valve_switch: "Zone 8"
+        enable_switch: "Enable Zone 8"
         run_duration_number:
           id: zone_8_run_duration
           name: "Zone 8 Run Duration"
