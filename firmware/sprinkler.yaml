@@ -25,6 +25,15 @@ api:
 # Enable Over-The-Air updates
 ota:
   - platform: esphome
+  - platform: http_request
+
+http_request:
+
+update:
+  - platform: http_request
+    id: ${id_prefix}_firmware_update
+    name: "Firmware Update"
+    source: https://thebeaverdam.github.io/ESP32_SprinklerSystem/firmware/manifest.json
 
 # WiFi configuration with fallback hotspot
 wifi:
@@ -38,6 +47,10 @@ captive_portal:
 
 # Enable improv via serial for WiFi provisioning
 improv_serial:
+
+# Enable improv via BLE for WiFi provisioning
+esp32_improv:
+  authorizer: none
 
 # Enable ESPHome dashboard adoption
 dashboard_import:
@@ -315,6 +328,7 @@ sensor:
     entity_category: diagnostic
 
   - platform: copy
+    id: wifi_signal_percent
     source_id: wifi_signal_db
     name: "WiFi Signal Percent"
     filters:
@@ -323,6 +337,7 @@ sensor:
     entity_category: diagnostic
 
   - platform: uptime
+    id: ${id_prefix}_uptime
     name: Uptime
     entity_category: diagnostic
 
@@ -339,4 +354,5 @@ sensor:
 
 binary_sensor:
   - platform: status
+    id: connection_status
     name: "Connection Status"
