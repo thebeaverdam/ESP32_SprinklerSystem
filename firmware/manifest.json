@@ -1,0 +1,13 @@
+{
+    "name": "Sprinkler System",
+    "version": "1.0.0",
+    "builds": [
+      {
+        "chipFamily": "ESP32",
+        "ota": {
+          "md5": "",
+          "path": "sprinkler.ota.bin"
+        }
+      }
+    ]
+  }
