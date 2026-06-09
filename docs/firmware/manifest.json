@@ -5,8 +5,8 @@
       {
         "chipFamily": "ESP32",
         "ota": {
-          "md5": "",
-          "path": "sprinkler.ota.bin"
+          "md5": "bc83bb74dec8d251dd9b942eab744e8b",
+          "path": "firmware.ota.bin"
         }
       }
     ]
