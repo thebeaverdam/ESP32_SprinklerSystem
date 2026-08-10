@@ -1,5 +1,10 @@
 # ESPHome Sprinkler System
 
+<p align="center">
+  <a href="https://esphome.io/guides/made_for_esphome/">
+    <img src="https://media.esphome.io/made-for-esphome/made-for-esphome-black-on-transparent.svg" alt="Made for ESPHome" width="220">
+  </a>
+</p>
 
 
 ![Board](resources/Riego.png)
